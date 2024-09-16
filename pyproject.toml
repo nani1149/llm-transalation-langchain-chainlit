@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "llm-transalation-langchain-chainlit"
+version = "0.1.0"
+description = ""
+authors = ["nani1149 <nani1149@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9.13,<3.13"
+langchain-community = "^0.2.17"
+docx = "^0.2.4"
+python-docx = "^1.1.2"
+
+[tool.poetry.group.dev.dependencies]
+chainlit = "^1.1.404"
+langchain = "^0.2.16"
+google-cloud-aiplatform = {extras = ["langchain"], version = "^1.66.0"}
+langchain-openai = "^0.1.24"
+langchain-google-vertexai = "^1.0.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

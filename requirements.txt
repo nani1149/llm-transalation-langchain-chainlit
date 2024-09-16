@@ -1,15 +1,11 @@
 langchain
 uvicorn
-langserve[all]
-google-cloud-aiplatform[langchain]
 openai
 langchain-openai
-langchain 
 langchain-community 
 langchainhub 
-langchain-openai 
-langchain-chroma 
 bs4
 langchain_google_vertexai
 unstructured
 chainlit
+python-docx

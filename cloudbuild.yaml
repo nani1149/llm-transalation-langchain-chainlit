@@ -1,0 +1,29 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  id: Build Image
+  entrypoint: bash
+  args:
+    - -c
+    - |
+      DOCKER_BUILDKIT=1 docker build --target=runtime . -t us-central1-docker.pkg.dev/sacred-alliance-433217-e3/chainlit-repo/chainlit-transalation:latest \
+      && docker push us-central1-docker.pkg.dev/sacred-alliance-433217-e3/chainlit-repo/chainlit-transalation:latest
+  # - name: 'gcr.io/cloud-builders/gcloud'
+  #     script: |
+  #       gcloud run deploy cloudrunservice --image us-central1-docker.pkg.dev/sacred-alliance-433217-e3/chainlit-repo/chainlit-transalation:latest --concurrency 4 --cpu 1 --set-env-vars PORT=8000 --no-allow-unauthenticated --no-cpu-throttling --service-account tekton-ndonthieni@sacred-alliance-433217-e3.iam.gserviceaccount.com --region us-central1 --timeout=600    
+# steps:
+#   - name: 'gcr.io/cloud-builders/gcloud'
+#     script: |
+#       gcloud run deploy cloudrunservice --image us-central1-docker.pkg.dev/sacred-alliance-433217-e3/chainlit-repo/chainlit-transalation:latest --concurrency 4 --cpu 1 --set-env-vars PORT=8000 --no-allow-unauthenticated --no-cpu-throttling --service-account tekton-ndonthieni@sacred-alliance-433217-e3.iam.gserviceaccount.com --region us-central1 --timeout=600    
+
+# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+#   entrypoint: gcloud
+#   id: Deploy API
+#   args: ['run', 'deploy', 'transalation-api',
+#              '--image=us-central1-docker.pkg.dev/sacred-alliance-433217-e3/chainlit-repo/chainlit-transalation:latest',
+#              '--region=us-central1-docker.pkg.dev', '--service-account=tekton-ndonthieni@sacred-alliance-433217-e3.iam.gserviceaccount.com',
+#               '--allow-unauthenticated'
+#               ]
+#   waitFor: [ 'Build Image' ]
+
+images:
+- us-central1-docker.pkg.dev/sacred-alliance-433217-e3/chainlit-repo/chainlit-transalation:latest
