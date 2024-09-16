@@ -13,10 +13,10 @@ import sqlalchemy
 # # function to return the database connection object
 # def getconn():
 #     conn = connector.connect(
-#         "sacred-alliance-433217-e3:us-central1:tf-mssql-public-efe4c33f",
+#         "s",
 #         "pyodbc",
-#         user="sqlserver",
-#         password="test123",
+#         user="",
+#         password="",
 #         db="msdb",
 #         sql_driver= '{ODBC Driver 17 for SQL Server}'
 #     )
