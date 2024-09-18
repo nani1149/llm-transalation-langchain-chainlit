@@ -51,6 +51,6 @@ COPY ./chainlit.md /home/appuser/app/chainlit.md
 COPY --chown=1001:1001 ./.chainlit /home/appuser/app/.chainlit
 COPY ./source /home/appuser/app/source
 
-#CMD ["chainlit", "run", "/home/appuser/app/source/app.py"]
+CMD ["chainlit", "run", "/home/appuser/app/source/app.py"]
 
-CMD exec uvicorn main:fast_app --host 0.0.0.0 --port 80 --workers 1
+#CMD exec uvicorn main:fast_app --host 0.0.0.0 --port 80 --workers 1
